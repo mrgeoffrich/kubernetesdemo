@@ -23,9 +23,12 @@ sudo apt update
 sudo apt install -y containerd.io
 
 # Configure containerd and start service
-sudo su -
-mkdir -p /etc/containerd
-containerd config default>/etc/containerd/config.toml
+# REWORK these lines
+# sudo su -
+# mkdir -p /etc/containerd
+# containerd config default>/etc/containerd/config.toml
+sudo mkdir -p /etc/containerd
+sudo containerd config default>/etc/containerd/config.toml
 
 # restart containerd
 sudo systemctl restart containerd
