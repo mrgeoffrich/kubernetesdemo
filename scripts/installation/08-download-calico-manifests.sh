@@ -2,6 +2,8 @@
 
 set -eux
 
+if [ -z ${cidr+x} ]; then echo "variable cidr is unset"; exit 1; fi
+
 curl https://projectcalico.docs.tigera.io/manifests/tigera-operator.yaml > tigera-operator.yaml
 curl https://projectcalico.docs.tigera.io/manifests/custom-resources.yaml > custom-resources.yaml
 
